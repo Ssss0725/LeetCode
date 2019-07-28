@@ -1,2 +1,3 @@
 # LeetCode刷题记录
-以Python为主
+包括算法和SQL
+算法以Python为主
