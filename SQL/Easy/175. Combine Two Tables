@@ -1,0 +1,6 @@
+# Write your MySQL query statement below
+# 思路：要求连接两个table，除了提取有效信息外，无论是否是否存在address，所以使用left join
+
+SELECT FirstName, LastName, City, State
+from Person left join Address
+on Person.PersonId= Address.PersonId
