@@ -1,0 +1,15 @@
+#方法1
+思路：选出比最大的小的工资
+SELECT MAX(Salary) AS SecondHighestSalary
+FROM Employee
+WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+
+#方法2
+思路：降序排列工资，用LIMIT选出第二高的；用IFNULL保证能够返回null值
+SELECT 
+IFNULL(
+(SELECT DISTINCT Salary 
+FROM Employee
+ORDER BY Salary DESC 
+LIMIT 1,1), null) 
+AS SecondHighestSalary
