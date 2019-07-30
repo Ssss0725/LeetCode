@@ -1,0 +1,7 @@
+思路：用UPDATE结合 CASE..WHEN
+
+UPDATE salary
+SET sex= CASE sex
+WHEN 'm' THEN 'f'
+WHEN 'f' THEN 'm'
+END
