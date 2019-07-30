@@ -1,0 +1,8 @@
+思路：计算不同学生大于5的课的数量。
+如果是用HAVING COUNT(class)>=5，如果有重复学生也会被计算在内
+但是题目要求不能计算重复学生，所以用HAVING COUNT(DISTINCT student)>=5
+
+SELECT class
+FROM courses
+GROUP BY class
+HAVING COUNT(DISTINCT student)>=5
